@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Audio Effects recovered GDD deck</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#f6f6f4;--ink:#1f2328;--muted:#5d6670;--card:#ffffff;--rule:#d9dcdf;--blue:#2f6f9f;--amber:#9a6412;--red:#b3443a;color-scheme:light}
+@media (prefers-color-scheme: dark){:root{--bg:#202225;--ink:#e6e6e6;--muted:#9aa3ad;--card:#2b2e33;--rule:#3a3e44;--blue:#6fa8d6;--amber:#e0a040;--red:#e06c5f;color-scheme:dark}}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Helvetica,Arial,sans-serif}
+.slide{display:none;min-height:100vh;box-sizing:border-box;padding:48px 64px 72px;max-width:1400px;margin:0 auto}
+.slide.on{display:block}
+h1{font-size:42px;margin:0 0 10px;line-height:1.15}h2{font-size:32px;margin:0 0 14px;line-height:1.2}
+.kicker{color:var(--muted);font-size:15px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px}
+p,li{font-size:21px;line-height:1.45}li{margin:6px 0}
+.cap{color:var(--muted);font-size:15px;margin-top:6px}
+img{max-width:100%;height:auto;border:1px solid var(--rule);background:#202225;display:block}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:6px;border:2px solid}
+.obs{color:var(--blue);border-color:var(--blue)}.inf{color:var(--amber);border-color:var(--amber);border-style:dashed}.miss{color:var(--red);border-color:var(--red);border-style:dotted}
+.box{border:2px solid var(--blue);border-radius:8px;padding:10px 16px;margin:8px 0;background:var(--card)}
+.box.inf{border-style:dashed;border-color:var(--amber)}.box.miss{border-style:dotted;border-color:var(--red)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;font-size:17px;width:100%}td,th{border-bottom:1px solid var(--rule);padding:7px 10px;text-align:left;vertical-align:top}
+.big{font-size:88px;font-weight:700;color:var(--red);line-height:1}
+.zelda{border-left:6px solid var(--amber);padding-left:18px}
+.sec{font-size:14px;margin-top:22px}.sec a{color:var(--blue)}
+nav{position:fixed;bottom:12px;right:20px;color:var(--muted);font-size:14px;display:flex;gap:10px;align-items:center}
+nav button{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:4px 12px;cursor:pointer}
+@media(max-width:800px){.slide{padding:24px 16px 72px}h1{font-size:28px}h2{font-size:23px}p,li{font-size:17px}.big{font-size:56px}table{font-size:14px}}
+</style></head><body>
+<!-- /gdd deck (via /gdd reverse --path godot silent) · walker-audio-audio-effects · revision 1 · 2026-09-27 · gate — unsigned at time of writing -->
+<section class="slide">
+<div class="kicker">walker-audio-audio-effects · recovered GDD 0.1.0 · 2026-09-27 · Zelda, silent · gate — unsigned at time of writing</div>
+<h1>Twenty-six switches and no goal.</h1>
+<p>A local copy of Godot's Audio Effects demo: seven sounds, one music track, eighteen Master-bus effects. It is a <b>tech demo</b>, not a game.</p><p><span class='tag obs'>OBSERVED</span> in code or logs &nbsp;<span class='tag inf'>INFERRED</span> implied, evidence stated &nbsp;<span class='tag miss'>MISSING</span> nobody has decided</p><p class='cap'>No gate signed. No human listening test. Arrow keys or space to advance.</p>
+<p class="sec">→ <a href="../GDD.md">GDD header</a></p>
+</section>
+<section class="slide">
+<div class="kicker">What exists · evidence</div>
+<h2>The upstream screenshot</h2>
+<img src='../godot/screenshots/audio_effects.webp' alt='Audio Effects demo screenshot'><p class='cap'><span class='tag obs'>OBSERVED</span> godot/screenshots/audio_effects.webp ships with the upstream demo. It is not a local capture; CAPTURE-PLAN.md says no capture has been recorded.</p>
+<p class="sec">→ <a href="../GDD.md">GDD §1 Vision summary</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Vision · §1–2</div>
+<h2>The vision is the upstream one-liner</h2>
+<div class='box'>"showcases the various Audio Effects that can be used in Godot" <span class='tag obs'>OBSERVED project.godot:14</span></div><div class='box miss'>Walker purpose, audience, pillars, PX goals <span class='tag miss'>MISSING</span> → Q-01</div><div class='box inf'>Candidate pillars: one control = one effect; same source before and after <span class='tag inf'>INFERRED</span></div>
+<p class="sec">→ <a href="../GDD.md">GDD §1–2</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Core loop · §3</div>
+<h2>Press, flip, listen — the listening is unverified</h2>
+<img src='diagrams/recovered-loop.svg' alt='Recovered interaction loop'>
+<p class="sec">→ <a href="../GDD.md">GDD §3 Core loop</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Systems · §6</div>
+<h2>State is per player and per bus flag</h2>
+<img src='diagrams/state-flow.svg' alt='Recovered state flow'>
+<p class="sec">→ <a href="../GDD.md">GDD §6 Systems</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Verified vs not · §16</div>
+<h2>Wiring is proven; sound is not</h2>
+<div class='wrap'><table><tr><th>Check</th><th>Result</th></tr><tr><td>18 toggles flip and restore their bus flag (mouse)</td><td><span class='tag obs'>18/18</span></td></tr><tr><td>7 sound buttons start their players; music starts/stops</td><td><span class='tag obs'>7/7 · true/true</span></td></tr><tr><td>EQ6/10/21 band gains</td><td><span class='tag obs'>all 0 dB</span></td></tr><tr><td>Audible dry/wet difference</td><td><span class='tag miss'>not tested</span></td></tr></table></div><p class='cap'>Headless Godot 4.7.2, Dummy audio driver. FRICTIONAL.md 2026-09-19..20.</p>
+<p class="sec">→ <a href="../GDD.md">GDD §16 Tests</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Tuning · §5</div>
+<h2>Three of eighteen toggles are designed to do nothing</h2>
+<p>EQ6, EQ10 and EQ21 are flat. Enabling them changes no band. <span class='tag obs'>OBSERVED test_eq_defaults.gd</span></p><p>Source values worth hearing: Amplify +5 dB · PitchShift 0.75 · Panner hard left · Distortion drive 0.5 · Compressor −24 dB. <span class='tag obs'>OBSERVED default_bus_layout.tres</span></p>
+<p class="sec">→ <a href="../GDD.md">GDD §5 M-03</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Risks · §14</div>
+<h2>Top three risks</h2>
+<ul><li>R-01 flat EQs narrated as an audible change</li><li>R-02 headless state checks read as audio verification</li><li>R-03 CC BY 3.0 music credit dropped from a film</li></ul>
+<p class="sec">→ <a href="../GDD.md">GDD §14 Risks</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Open questions · decisions.md</div>
+<h2>Six open, one that matters first</h2>
+<div class='big'>6</div><p><b>Q-01</b> What is this copy for, and who is it for? Q-02 lesson order · Q-03 priorities · Q-04 wanted additions · Q-05 flat EQs · Q-06 film success criterion.</p>
+<p class="sec">→ <a href="../GDD.md">GDD §15 Open questions</a></p>
+</section>
+<section class="slide">
+<div class="kicker">Zelda's read</div>
+<h2>An instrument, not a game</h2>
+<div class='zelda'><p>Ghost Center and Mechanic Mirage: present, as expected. The design question here is not the core loop; it is what someone should be able to hear and name afterwards. Answer Q-01 first.</p></div>
+<p class="sec">→ <a href="../GDD.md">GDD Zelda's notes</a></p>
+</section>
+<nav><button id="prev" aria-label="Previous slide">‹</button><span id="n"></span><button id="next" aria-label="Next slide">›</button></nav>
+<script>
+const S=[...document.querySelectorAll('.slide')];let i=0;
+function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('on',k===i));document.getElementById('n').textContent=(i+1)+' / '+S.length;}
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}if(e.key==='Home')show(0);if(e.key==='End')show(S.length-1)});
+document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>show(i+1);
+show(0);
+</script></body></html>

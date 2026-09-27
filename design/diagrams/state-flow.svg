@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="600" viewBox="0 0 1400 600" role="img" aria-labelledby="t d">
+<title id="t">Recovered state flow — Audio Effects</title>
+<desc id="d">The only state is per-player playback and 18 independent bus flags. No session, no end, no reset. References: M-01 M-02 M-03 S-01 S-02.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/></marker><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e0a040"/></marker><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e06c5f"/></marker></defs>
+<rect width="1400" height="600" fill="#202225"/>
+<g font-family="Helvetica, Arial, sans-serif">
+<text x="36" y="50" font-size="28" font-weight="700" fill="#e6e6e6">Recovered state flow — Audio Effects</text>
+<text x="36" y="78" font-size="15" fill="#9aa3ad">The only state is per-player playback and 18 independent bus flags. No session, no end, no reset.</text>
+<rect x="36" y="560" width="30" height="18" rx="4" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="76" y="574" font-size="14" fill="#9aa3ad">observed in code / logs (solid)</text>
+<rect x="366" y="560" width="30" height="18" rx="4" fill="#2b2e33" stroke="#e0a040" stroke-width="2.5" stroke-dasharray="7 5"/>
+<text x="406" y="574" font-size="14" fill="#9aa3ad">inferred or proposed (dashed)</text>
+<rect x="696" y="560" width="30" height="18" rx="4" fill="#2b2e33" stroke="#e06c5f" stroke-width="2.5" stroke-dasharray="3 4"/>
+<text x="736" y="574" font-size="14" fill="#9aa3ad">missing / unverified (dotted)</text>
+<text x="1364" y="574" font-size="14" fill="#9aa3ad" text-anchor="end">IDs: M-01 M-02 M-03 S-01 S-02</text>
+<rect x="30" y="100" width="420" height="200" rx="10" fill="none" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="42" y="122" font-size="14" font-weight="700" fill="#9aa3ad">Music (M-02)</text>
+<rect x="490" y="100" width="420" height="200" rx="10" fill="none" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="502" y="122" font-size="14" font-weight="700" fill="#9aa3ad">Each of 7 sounds (M-01)</text>
+<rect x="950" y="100" width="420" height="200" rx="10" fill="none" stroke="#9aa3ad" stroke-width="1.2"/>
+<text x="962" y="122" font-size="14" font-weight="700" fill="#9aa3ad">Each of 18 effect slots (M-03)</text>
+<path d="M210,171 L240,160 L270,171" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="240" y="152" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">toggle on</text>
+<path d="M282,230 L240,250 L198,230" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="240" y="272" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">toggle off</text>
+<path d="M670,171 L700,160 L730,171" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="700" y="152" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">button pressed</text>
+<path d="M742,230 L700,250 L658,230" fill="none" stroke="#e0a040" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ad)"/>
+<text x="700" y="272" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">stream ends</text>
+<path d="M1130,171 L1160,160 L1190,171" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="1160" y="152" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">toggle on</text>
+<path d="M1202,230 L1160,250 L1118,230" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="1160" y="272" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">toggle off</text>
+<rect x="60" y="170" width="150" height="60" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="135" y="206" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Stopped</text>
+<rect x="270" y="170" width="150" height="60" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="345" y="198" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Playing</text>
+<text x="345" y="216" font-size="13" fill="#9aa3ad" text-anchor="middle">loop</text>
+<rect x="520" y="170" width="150" height="60" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="595" y="206" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Idle</text>
+<rect x="730" y="170" width="150" height="60" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="805" y="206" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Playing</text>
+<rect x="980" y="170" width="150" height="60" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="1055" y="198" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Off</text>
+<text x="1055" y="216" font-size="13" fill="#9aa3ad" text-anchor="middle">start state</text>
+<rect x="1190" y="170" width="150" height="60" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="1265" y="206" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">On</text>
+<rect x="490" y="390" width="420" height="80" rx="8" fill="#2b2e33" stroke="#e06c5f" stroke-width="2.5" stroke-dasharray="3 4"/>
+<text x="700" y="428" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Reset all / end of session</text>
+<text x="700" y="446" font-size="13" fill="#9aa3ad" text-anchor="middle">no such state exists · Q-04</text>
+</g></svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="660" viewBox="0 0 1400 660" role="img" aria-labelledby="t d">
+<title id="t">Recovered interaction loop — Audio Effects</title>
+<desc id="d">What the code wires (solid) and what nobody has verified (dotted): a source plays through 18 Master effects. References: M-01 M-02 M-03 S-01 S-02 F-04.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/></marker><marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e0a040"/></marker><marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e06c5f"/></marker></defs>
+<rect width="1400" height="660" fill="#202225"/>
+<g font-family="Helvetica, Arial, sans-serif">
+<text x="36" y="50" font-size="28" font-weight="700" fill="#e6e6e6">Recovered interaction loop — Audio Effects</text>
+<text x="36" y="78" font-size="15" fill="#9aa3ad">What the code wires (solid) and what nobody has verified (dotted): a source plays through 18 Master effects.</text>
+<rect x="36" y="620" width="30" height="18" rx="4" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="76" y="634" font-size="14" fill="#9aa3ad">observed in code / logs (solid)</text>
+<rect x="366" y="620" width="30" height="18" rx="4" fill="#2b2e33" stroke="#e0a040" stroke-width="2.5" stroke-dasharray="7 5"/>
+<text x="406" y="634" font-size="14" fill="#9aa3ad">inferred or proposed (dashed)</text>
+<rect x="696" y="620" width="30" height="18" rx="4" fill="#2b2e33" stroke="#e06c5f" stroke-width="2.5" stroke-dasharray="3 4"/>
+<text x="736" y="634" font-size="14" fill="#9aa3ad">missing / unverified (dotted)</text>
+<text x="1364" y="634" font-size="14" fill="#9aa3ad" text-anchor="end">IDs: M-01 M-02 M-03 S-01 S-02 F-04</text>
+<path d="M320,175 L400,175" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="360" y="167" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">press</text>
+<path d="M660,175 L740,175" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<path d="M1000,175 L1080,175" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<path d="M870,330 L870,220" fill="none" stroke="#e6e6e6" stroke-width="2" marker-end="url(#a)"/>
+<text x="940" y="275" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">flag on/off</text>
+<path d="M1210,220 L1210,330" fill="none" stroke="#e06c5f" stroke-width="2" stroke-dasharray="3 4" marker-end="url(#am)"/>
+<text x="1260" y="275" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">unverified</text>
+<path d="M1080,375 L1000,375" fill="none" stroke="#e0a040" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ad)"/>
+<text x="1040" y="427" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">change one toggle,</text>
+<text x="1040" y="443" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">replay</text>
+<path d="M1210,420 L1210,590 L180,590 L180,220" fill="none" stroke="#e0a040" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ad)"/>
+<text x="180" y="582" font-size="13" fill="#9aa3ad" text-anchor="middle" paint-order="stroke" stroke="#202225" stroke-width="4">pick another source</text>
+<rect x="40" y="130" width="280" height="90" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="180" y="163" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Press a sound button</text>
+<text x="180" y="182" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">or toggle Music</text>
+<text x="180" y="201" font-size="13" fill="#9aa3ad" text-anchor="middle">M-01 M-02 · 8 players at −18 dB</text>
+<rect x="400" y="130" width="260" height="90" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="530" y="163" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">AudioStreamPlayer</text>
+<text x="530" y="182" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">plays</text>
+<text x="530" y="201" font-size="13" fill="#9aa3ad" text-anchor="middle">Music via bus Music → Master</text>
+<rect x="740" y="130" width="260" height="90" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="870" y="163" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Master bus</text>
+<text x="870" y="182" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">18 effect slots</text>
+<text x="870" y="201" font-size="13" fill="#9aa3ad" text-anchor="middle">S-01 · all off at start</text>
+<rect x="1080" y="130" width="260" height="90" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="1210" y="172" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Output device</text>
+<text x="1210" y="192" font-size="13" fill="#9aa3ad" text-anchor="middle">headless runs: Dummy driver</text>
+<rect x="740" y="330" width="260" height="90" rx="8" fill="#2b2e33" stroke="#478cbf" stroke-width="2.5"/>
+<text x="870" y="363" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Flip an effect</text>
+<text x="870" y="382" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">CheckButton</text>
+<text x="870" y="401" font-size="13" fill="#9aa3ad" text-anchor="middle">M-03 · set_bus_effect_enabled(0, i)</text>
+<rect x="1080" y="330" width="260" height="90" rx="8" fill="#2b2e33" stroke="#e06c5f" stroke-width="2.5" stroke-dasharray="3 4"/>
+<text x="1210" y="363" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Listener hears</text>
+<text x="1210" y="382" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">dry vs wet</text>
+<text x="1210" y="401" font-size="13" fill="#9aa3ad" text-anchor="middle">F-04 · never verified</text>
+<rect x="400" y="460" width="260" height="80" rx="8" fill="#2b2e33" stroke="#e06c5f" stroke-width="2.5" stroke-dasharray="3 4"/>
+<text x="530" y="498" font-size="16" font-weight="700" fill="#e6e6e6" text-anchor="middle">Why listen? goal, audience</text>
+<text x="530" y="516" font-size="13" fill="#9aa3ad" text-anchor="middle">Q-01 · [MISSING]</text>
+</g></svg>
